@@ -1,0 +1,162 @@
+
+
+%%% This LaTeX source document can be used as the basis for your technical
+%%% report. Intentionally stripped and simplified
+%%% and commands should be adjusted for your particular paper - title, 
+%%% author, citations, equations, etc.
+% % Citations/references are in report.bib 
+
+\documentclass[conference,backref=page]{acmsiggraph}
+
+\TOGonlineid{45678}
+\TOGvolume{0}
+\TOGnumber{0}
+\TOGarticleDOI{1111111.2222222}
+\TOGprojectURL{}
+\TOGvideoURL{}
+\TOGdataURL{}
+\TOGcodeURL{}
+
+% Include this so that citations show up in blue and the page information is included in the reference section
+\hypersetup{
+    colorlinks = true, 
+    linkcolor = blue,
+    anchorcolor = red,
+    citecolor = blue, 
+    filecolor = red, 
+}
+
+
+\title{"Do You Have A Flag?"\\
+	   Design Document}
+
+\author{Beej Persson \thanks{e-mail:40183743@live.napier.ac.uk} \\
+Edinburgh Napier University\\
+Physics-Based Animation (SET09119)}
+\pdfauthor{Beej Persson}
+
+\keywords{radiosity, global illumination, constant time}
+
+\begin{document}
+
+\teaser{
+   \includegraphics[height=1.5in]{images/sampleteaser}
+   \caption{(a) A vortex applied to a sail, (b) cloth made up from a mesh of interconnected springs, (c) flag simulation, (d) rigid body and cloth collision simulations.}
+   \label{teaser}
+ }
+
+\maketitle
+
+\raggedbottom
+
+\begin{abstract}
+
+This document looks to outline the design of the proposed simulation idea, providing a blueprint that will be used to reflect on the success of the later implementation. The core idea of the intended design for this idea is to simulate a directional force being applied to a cloth-like structure. The desired final aesthetic will be an interactive leaf-blower directed towards a choice of a curtain attached to a curtain rail, a ships sail and a flag. The simulation should also include the option to throw small objects at the cloth structure and see its effects.
+
+\end{abstract}
+
+
+
+\keywordlist
+
+%% Use this only if you're preparing a technical paper to be published in the 
+%% ACM 'Transactions on Graphics' journal.
+
+% \TOGlinkslist
+
+% \copyrightspace
+
+
+\section{Introduction}
+
+
+\paragraph{What problem are you solving?}
+The introduction sells your physics-based simulation effect.  It tells the reader about the problems and motivation.  It tells the reader about why it is important.  Your introduction should be five clear well defined paragraphs \cite{day2012write}.
+
+
+\paragraph{What is the motivation? (What's so interesting and important?)}
+Explain why your simulation is important?  Why would you need it?  Where would it be used?
+
+\paragraph{Challenging \& Limitations}
+Why is it hard? (e.g., why do naive approaches fail?)
+
+\paragraph{Our Work}
+Why hasn't it been solved before or what are you doing differently? How does yours differ?
+What's your approach?  How will you solve the problem?  Are their any specific limitations?
+
+
+\paragraph{Starting examples:}
+This report attempts to addresses the problem of the applicability of …. in ….. by considering …...  It surveys a number of answers to this question.  Our method offers a simplistic, robust, and reliable scheme.
+
+This report attempts to introduce the reader to …… 
+(Catch the readers attention, Anecdotes, Proverbs, Facts, Real-World Examples...)
+
+The problem this report addresses is …..
+
+
+\section{Related Work}
+Refer to literature on the particular physics-based animation effect you want to synthesize (e.g., published articles, books, conference proceedings, web articles) provide a comprehensive review - and use the correct citation format, e.g., \cite{Sako00}. Although the theoretical and/or algorithmic details of the papers you will review may occasionally be beyond your current knowledge, you should be able to grasp the general principles of the techniques used and assess whether you are capable of developing similar techniques, more advanced techniques, or whether you would need to simplify these techniques. 
+
+Related work should finish with a summary paragraph - emphasising the crucial similarities or differences between existing methods presented in the literature.  For example: (1) you might want to modify the technique to run on the GPU; (2) or you combine different techniques from different authors; (3) or you are simplifying the algorithm to make it run faster.
+
+% SIMULATION
+\section{Simulation}
+
+\paragraph{Overview}
+You will start with a brief overview of the core principles and mechanism behind your effect.  This should be reflected in your final implementation, so consider what you will actually be implementing. What components make up the effect and how are they connected.
+
+How does your simulation work and what are the reasons it is important.  This is a decisive section to put together as it will help you in the rest of your physics-based animation development.
+
+\paragraph{Detailed description}
+Provide a more detailed description of how the simulation functions. Consider the following aspects of the simulation:
+\begin{itemize}
+\item {\bf Functionality}: Describe what your simulation does and the anticipated boundaries of its functionality
+\item {\bf Method}: Present the theory underpinning your technique (Mathematical, physics or algorithmic principles) and the technique itself. You should be able to articulate a general algorithm at this stage.
+\item {\bf Control/interactivity}: Describe the interactive how the simulation will be controlled
+\end{itemize}
+
+\paragraph{Implementation}
+At the design stage, you are not expected to provide information about the implementation, but you need to consider and reflect on the technical challenges that you will need to address. You also need to provide information about relevant technical aspects of your project. Please consider the following points:
+
+\begin{itemize}
+\item  {\bf Major Software Development Tasks} What are the major pieces of development to make the software work?  Identify the main tasks from the simulation design, particularly items you feel will be difficult to implement. 
+\item {\bf Risks} What are the risks in your development?  Consider which pieces of functionality will be difficult to implement, and what are the options if you cannot achieve them.
+\item {\bf External Libraries} Are you using any external libraries or resources to implement your simulation?  If you are using any libraries outside the ones developed in the practical sessions, these will need to be described here.
+\end{itemize}
+
+In your final report, this section will present the final implementation details. You should also reflect on the differences between the approach proposed in your design document and the final implementation.
+
+% EVALUATION
+\section{Testing and evaluation}
+In this section of the {\bf Design document}, you should describe the tests that you are considering carrying out to test your evaluation and ensure that it works within its specified boundaries. In your {\bf Final report}, you will present the actual evaluation that you have carried out and reflect on its outcome. In particular, you may consider the actual performance of your simulation in relation to your initial goals. A comparison to relevant work would also be beneficial.
+
+\section{Guidelines}
+This section should be removed from your design report. Information provided here is to help you writing up your reports.
+
+\begin{itemize}
+\item Equations should be numbered and in the correct format, e.g., Equation \ref{eq:myequation} below:
+\begin{equation} \label{eq:myequation}
+ \sum_{j=1}^{z} j = \frac{z(z+1)}{2}
+\end{equation}
+\item Furthermore, if you include an equation, ensure you explain what each of the variables are (e.g., $F$ is force, $m$ is mass, and $a$ is the acceleration).
+\item Don't using 'I' or 'Me'.
+\item Each paragraph should be clear and focused, with multiple sentences that help make your point - avoid lots of single line paragraph sentence.
+\item Make sure the citations are done using the correct formatting (i.e., .bib file and let LaTeX generate the references).
+\item Every figure should have a caption, explaining what the picture is and what the reader should be looking at (i.e., what is important about the figure, what does it show)
+\item A figure should also be referenced in the body of the main text (e.g., see Figure \ref{fig:teaser})
+\item Equations should be numbered, and referenced in the text. Furthermore, ensure each of the variables in the equation are explained (i.e., don't use F=ma and not say what F, a, and m are)
+\end{itemize}
+
+
+\section{Conclusion and Future work}
+The report should finish with a summary to give a brief overview of what the reader should remember most.  What was most important? The future work part only needs to be covered in your final report.
+
+
+% \section*{Acknowledgements}
+
+
+\bibliographystyle{acmsiggraph}
+\bibliography{report}
+
+\end{document}
+
